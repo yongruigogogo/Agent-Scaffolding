@@ -1,0 +1,27 @@
+#API接口参数
+llm:
+  model_name: Qwen/Qwen3-14B
+  base_url: https://api.siliconflow.cn/v1
+
+#sqlite参数
+sqlite:
+  db_name: ["chatHistory_db","sensitiveWord_db","toolRegister_db"]
+
+#mysql参数
+mysql:
+  databases:
+    db1:
+      host: localhost
+      port: 3306
+      user: root
+      password: 5233rgwswswws
+      database: db1
+      charset: utf8mb4
+#    db2:
+#      host: localhost
+#      port: 3306
+#      user: root
+#      password: xxxx
+#      database: db1test
+#      charset: utf8mb4
+

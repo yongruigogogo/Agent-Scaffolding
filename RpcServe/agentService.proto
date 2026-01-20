@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+//包名
+package agent;
+//编译输出
+//python -m grpc_tools.protoc -I输入包地址 --python_out=输出代码1地址 --grpc_python_out=输出代2地址 .proto文件名
+
+message systemRequest {
+  int32 userId = 1;  // 字段标识号（1开始，唯一，用于序列化）
+  int32 userType = 2; //用户类型
+  string query = 3;
+}
+
+// 2. 定义响应消息类型（服务端向客户端返回的数据）
+message agentResponse {
+  int32 code = 1;
+  string message = 2;
+  string data = 3;
+}
+
+service agentService {
+  // 简单 RPC：定义接口方法（请求类型 -> 响应类型）
+  rpc getUserInfo(systemRequest) returns (agentResponse);
+}
+
